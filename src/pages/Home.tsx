@@ -4,7 +4,7 @@ import { ArrowUpRight, Phone, MessageSquare, Search, BarChart3, Globe, Code, Pen
 import { Link } from "react-router-dom";
 import CTASection from "../components/sections/CTASection";
 import ImageAutoScroller from "../components/sections/ImageAutoScroller";
-import LogoScroller from "../components/sections/LogoScroller";
+import Logoscroller from "../components/sections/Logoscroller";
 
 export default function Home() {
   return (
@@ -66,7 +66,7 @@ export default function Home() {
       <ImageAutoScroller/>
 
       {/* Trusted By Section */}
-      <LogoScroller/>
+      <Logoscroller/>
 
       {/* Data Driven Solutions Section */}
       <section className="py-24 container-custom grid md:grid-cols-2 gap-16 items-center">
