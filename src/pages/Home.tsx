@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import { ArrowUpRight, Phone, MessageSquare, Search, BarChart3, Globe, Code, PenTool, Hash, Megaphone, Smartphone, Star, ChevronDown, Plus, Minus, ArrowRight } from "lucide-react";
+import { ArrowUpRight, Phone, MessageSquare, Search, BarChart3, Globe, Code, PenTool, Hash, Megaphone, Smartphone, Star, ChevronDown, Plus, Minus, ArrowRight, LayoutDashboard, TrendingUp, Zap, LayoutGrid, Lightbulb, } from "lucide-react";
 import { Link } from "react-router-dom";
 import CTASection from "../components/sections/CTASection";
 import ImageAutoScroller from "../components/sections/ImageAutoScroller";
 import Logoscroller from "../components/sections/Logoscroller";
+import ServicesSection from "../components/sections/ServicesSection"
+
+
+
+
 
 export default function Home() {
   return (
@@ -112,23 +117,12 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <ServiceCard 
-              icon={<Megaphone className="w-6 h-6" />}
-              title="Marketing & Advertising Solutions"
-              desc="We design high-performance marketing and advertising campaigns that increase brand visibility, attract the right audience, and drive measurable business growth."
-            />
-            <ServiceCard 
-              icon={<Code className="w-6 h-6" />}
-              title="Website, IT, & Tech Solutions"
-              desc="We design modern websites, digital platforms, and technology solutions that streamline operations, enhance user experience, and support scalable business growth."
-            />
-            <ServiceCard 
-              icon={<Globe className="w-6 h-6" />}
-              title="Online Presence Optimization"
-              desc="We optimize your online presence across search engines, social media platforms, and digital listings to improve visibility, credibility, and customer discovery."
-            />
-          </div>
+
+          <ServicesSection/>
+
+
+
+          
         </div>
       </section>
 
