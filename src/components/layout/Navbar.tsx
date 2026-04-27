@@ -14,7 +14,15 @@ const navLinks = [
       { name: "Our Team", path: "/about#team" },
     ]
   },
-  { name: "Services", path: "/services" },
+  { name: "Services",
+     path: "/services",
+    submenu: [
+      { name: "Digital Marketing",path: "/digital-marketing"},
+      {name: "Website Development", path: "/"},
+      {name: "Graphics & Branding ", path: "/"},
+      {name: "Artificial Intelligence (A.I)", path: "/"},
+      {name: "Project Management", path: "/"}
+    ]},
   { name: "Projects", path: "/projects" },
   { name: "Blog", path: "/blog" },
   { name: "Contact", path: "/contact" },

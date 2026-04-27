@@ -9,6 +9,7 @@ import Projects from "./pages/Projects";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Whatsappwidget from "./components/sections/Whatsappwidget";
+import DigitalMarketing from "./pages/DigitalMarketing";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -41,6 +42,7 @@ export default function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path= "/digital-marketing" element={ <DigitalMarketing/>}/>
           </Routes>
         </main>
         <Footer />
