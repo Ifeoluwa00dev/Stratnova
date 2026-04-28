@@ -102,29 +102,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3 Ways We Help */}
-      <section className="py-24 bg-brand-card/30">
-        <div className="container-custom">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 text-brand-gold text-sm font-bold uppercase tracking-widest mb-6">
-               Our Services
-            </div>
-            <h2 className="text-4xl md:text-5xl font-display font-medium mb-6">
-              3 Ways We Help Businesses Drive Measurable Results
-            </h2>
-            <p className="text-brand-grey">
-              Our solutions combine marketing, advertising, and technology to help businesses grow
-            </p>
-          </div>
+      {/* 5 Ways We Help */}
+      <section className="py-32 bg-brand-card/30">
+  <div className="container-custom">
+    <div className="text-center max-w-3xl mx-auto mb-20">
+      <div className="inline-flex items-center gap-2 text-brand-gold text-sm font-bold uppercase tracking-widest mb-8">
+        Our Services
+      </div>
+      <h2 className="text-5xl md:text-6xl font-display font-medium mb-8">
+        5 Ways We Help Businesses Drive Measurable Results
+      </h2>
+      <p className="text-brand-grey text-lg leading-relaxed">
+        Our solutions combine marketing, advertising, and technology to help businesses grow
+      </p>
+    </div>
 
-
-          <ServicesSection/>
-
-
-
-          
-        </div>
-      </section>
+    <ServicesSection />
+  </div>
+</section>
 
       {/* Case Studies / Projects */}
       <section className="py-24">
