@@ -15,7 +15,7 @@ export default function ImageAutoScroller() {
   const trackRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="relative w-full overflow-hidden py-6">
+    <div className="relative w-full overflow-hidden py-10">
       {/* Left fade edge */}
       <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 " />
 
@@ -39,7 +39,7 @@ export default function ImageAutoScroller() {
 
       {/* Pause hint */}
       <p className="mt-3 text-center text-xs tracking-wide text-gray-400 dark:text-gray-600 select-none">
-        hover to pause
+       
       </p>
     </div>
   );
@@ -47,7 +47,9 @@ export default function ImageAutoScroller() {
 
 function ImageCard({ img }: { img: { id: number; alt: string } }) {
   return (
-    <div className="h-[150px] w-[220px] flex-shrink-0 overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800">
+
+    
+    <div className="h-[420px] w-[420px] flex-shrink-0 overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800">
       <img
         src={`https://picsum.photos/id/${img.id}/400/300`}
         alt={img.alt}

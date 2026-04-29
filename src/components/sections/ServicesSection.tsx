@@ -1,142 +1,179 @@
+import { motion, AnimatePresence } from "motion/react";
 import {
   Monitor,
   TrendingUp,
   Zap,
   LayoutGrid,
   Sparkles,
+  PenTool,
+  ChevronRight,
 } from "lucide-react";
 
 const services = [
   {
     number: "01",
-    icon: <Monitor className="w-10 h-10" style={{ color: "#3B6D11" }} />,
+    icon: <Monitor className="w-6 h-6" style={{ color: "#3B6D11" }} />,
     title: "Build and launch your web",
     desc: "We design and ship modern, fast websites — from landing pages to full platforms — that look great and go live fast.",
     tag: "Ready in days",
-    iconBg: "#D4EDBA",
     tagBg: "#D4EDBA",
     tagColor: "#3B6D11",
-    accentBg: "#D4EDBA",
-    big: true,
+    accentColor: "#3B6D11",
+    mockup: "https://picsum.photos/seed/web-build/800/500",
+    features: ["Custom design & development", "Mobile responsive", "Fast load times", "SEO ready from day one"],
   },
   {
     number: "02",
     icon: <TrendingUp className="w-6 h-6" style={{ color: "#185FA5" }} />,
     title: "Get more leads",
-    desc: "Targeted funnels that turn visitors into paying customers.",
+    desc: "Targeted funnels and campaigns that turn the right visitors into real paying customers.",
     tag: "Growth",
-    iconBg: "#C8E1F8",
     tagBg: "#C8E1F8",
     tagColor: "#185FA5",
+    accentColor: "#185FA5",
+    mockup: "https://picsum.photos/seed/leads/800/500",
+    features: ["Audience targeting", "Conversion optimized funnels", "A/B testing", "Lead tracking & reporting"],
   },
   {
-    number: "03",
-    icon: <Zap className="w-6 h-6" style={{ color: "#854F0B" }} />,
-    title: "Automate your business",
-    desc: "Cut manual work with smart automations that run 24/7.",
-    tag: "Always on",
-    iconBg: "#F8DEB8",
-    tagBg: "#F8DEB8",
-    tagColor: "#854F0B",
-  },
+  number: "03",
+  icon: <PenTool className="w-6 h-6" style={{ color: "#854F0B" }} />,
+  title: "Graphics & Branding",
+  desc: "We craft visual identities and design assets that make your brand instantly recognizable and memorable.",
+  tag: "Stand out",
+  tagBg: "#F8DEB8",
+  tagColor: "#854F0B",
+  accentColor: "#854F0B",
+  mockup: "https://picsum.photos/seed/branding/800/500",
+  features: ["Logo & identity design", "Brand style guides", "Marketing creatives", "Social media graphics"],
+},
   {
     number: "04",
     icon: <LayoutGrid className="w-6 h-6" style={{ color: "#534AB7" }} />,
     title: "Organize your operations",
-    desc: "Structure workflows so nothing falls through the cracks.",
+    desc: "Structure your workflows, tools, and team processes so nothing falls through the cracks.",
     tag: "Structured",
-    iconBg: "#DAD8FC",
     tagBg: "#DAD8FC",
     tagColor: "#534AB7",
+    accentColor: "#534AB7",
+    mockup: "https://picsum.photos/seed/operations/800/500",
+    features: ["Process mapping", "Tool stack setup", "Team dashboards", "SOP documentation"],
   },
   {
     number: "05",
     icon: <Sparkles className="w-6 h-6" style={{ color: "#993556" }} />,
     title: "AI powered growth",
-    desc: "Scale smarter with AI tools that predict and accelerate.",
+    desc: "Leverage AI tools and strategies to scale smarter, predict demand, and stay ahead.",
     tag: "AI first",
-    iconBg: "#F7D0DF",
     tagBg: "#F7D0DF",
     tagColor: "#993556",
+    accentColor: "#993556",
+    mockup: "https://picsum.photos/seed/ai-growth/800/500",
+    features: ["AI content generation", "Predictive analytics", "Smart segmentation", "Automated insights"],
   },
 ];
 
-function SmallServiceCard({ service }: { service: (typeof services)[number] }) {
-  return (
-    <div className="border border-gray-200 rounded-2xl p-6 flex flex-col gap-3 bg-white h-full shadow-md hover:shadow-lg transition-shadow duration-300">
-      <div
-        className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
-        style={{ background: service.iconBg }}
-      >
-        {service.icon}
-      </div>
-      <div className="flex flex-col gap-1 flex-1">
-        <p className="text-[10px] tracking-widest uppercase text-gray-400">
-          {service.number}
-        </p>
-        <h3 className="text-lg font-semibold text-gray-900 leading-snug">
-          {service.title}
-        </h3>
-        <p className="text-base text-gray-500 leading-relaxed">{service.desc}</p>
-      </div>
-      <span
-        className="text-[10px] font-medium tracking-wide uppercase px-3 py-1 rounded-full w-fit mt-auto"
-        style={{ background: service.tagBg, color: service.tagColor }}
-      >
-        {service.tag}
-      </span>
-    </div>
-  );
-}
-
 export default function ServicesSection() {
-  const big = services[0];
-  const small = services.slice(1);
-
   return (
-    <section className="py-0 px-0 max-w-full mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {/* Big card — left, spans 2 rows */}
-        <div className="row-span-2 border border-gray-200 rounded-2xl p-10 flex flex-col justify-end bg-white relative overflow-hidden min-h-[380px] md:min-h-[480px] shadow-md hover:shadow-lg transition-shadow duration-300">
-          {/* Decorative accent */}
-          <div
-            className="absolute top-0 right-0 w-36 h-36 rounded-bl-full opacity-40"
-            style={{ background: big.accentBg }}
-          />
-
-          {/* Icon */}
-          <div
-            className="absolute top-8 left-8 w-20 h-20 rounded-2xl flex items-center justify-center"
-            style={{ background: big.iconBg }}
+    <section className="py-0 px-0 max-w-full mx-auto space-y-6">
+      {services.map((service, index) => {
+        const isEven = index % 2 === 0;
+        return (
+          <motion.div
+            key={service.number}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
+            className="rounded-3xl overflow-hidden border border-white/10 hover:border-white/20 transition-all shadow-2xl bg-white/5 backdrop-blur-sm group"
           >
-            {big.icon}
-          </div>
+            <div className={`flex flex-col lg:flex-row ${!isEven ? "lg:flex-row-reverse" : ""}`}>
 
-          {/* Content */}
-          <p className="text-[10px] tracking-widest uppercase text-gray-400 mb-2">
-            {big.number}
-          </p>
-          <h3 className="text-4xl md:text-5xl font-semibold text-gray-900 leading-snug mb-3">
-            {big.title}
-          </h3>
-          <p className="text-lg text-gray-500 leading-relaxed mb-6">
-            {big.desc}
-          </p>
-          <span
-            className="text-[10px] font-medium tracking-wide uppercase px-3 py-1.5 rounded-full w-fit"
-            style={{ background: big.tagBg, color: big.tagColor }}
-          >
-            {big.tag}
-          </span>
-        </div>
+              {/* Mockup side — 60% */}
+              <div className="relative w-full lg:w-[60%] h-64 lg:h-auto overflow-hidden">
+                <img
+                  src={service.mockup}
+                  alt={service.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                {/* Gradient overlay */}
+                <div
+                  className={`absolute inset-0 ${
+                    isEven
+                      ? "bg-gradient-to-r from-transparent to-brand-dark/80"
+                      : "bg-gradient-to-l from-transparent to-brand-dark/80"
+                  }`}
+                />
+                {/* Number badge */}
+                <div className="absolute top-4 left-4 z-10">
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-white/50 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10">
+                    {service.number}
+                  </span>
+                </div>
+                {/* Tag badge */}
+                <div className="absolute bottom-4 left-4 z-10">
+                  <span
+                    className="text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-full"
+                    style={{ background: service.tagBg, color: service.tagColor }}
+                  >
+                    {service.tag}
+                  </span>
+                </div>
+              </div>
 
-        {/* 4 small cards — right side, 2x2 grid */}
-        <div className="grid grid-cols-2 gap-4">
-          {small.map((s) => (
-            <SmallServiceCard key={s.number} service={s} />
-          ))}
-        </div>
-      </div>
+              {/* Content side — 40% */}
+              <div className="w-full lg:w-[40%] p-8 lg:p-10 flex flex-col justify-center gap-6">
+                {/* Icon + Title */}
+                <div className="flex items-center gap-4">
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ background: service.tagBg }}
+                  >
+                    {service.icon}
+                  </div>
+                  <h3 className="text-2xl lg:text-3xl font-semibold text-white leading-snug">
+                    {service.title}
+                  </h3>
+                </div>
+
+                {/* Description */}
+                <p className="text-white/60 text-base leading-relaxed">
+                  {service.desc}
+                </p>
+
+                {/* Features */}
+                <div className="space-y-2">
+                  <p
+                    className="text-[10px] font-bold uppercase tracking-widest mb-3"
+                    style={{ color: service.tagColor }}
+                  >
+                    What's included
+                  </p>
+                  {service.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-sm text-white/70">
+                      <ChevronRight
+                        size={14}
+                        className="flex-shrink-0"
+                        style={{ color: service.accentColor }}
+                      />
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTA */}
+                <motion.button
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full py-3.5 rounded-xl text-sm font-bold border border-white/10 text-white hover:border-white/30 transition-all flex items-center justify-center gap-2 bg-white/5"
+                >
+                  Learn More
+                  <ChevronRight size={16} />
+                </motion.button>
+              </div>
+
+            </div>
+          </motion.div>
+        );
+      })}
     </section>
   );
 }

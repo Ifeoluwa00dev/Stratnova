@@ -2,7 +2,7 @@ const brands = ['Cudium', 'CardVest', 'Atorm', 'Rocktea', 'Salt', 'Tadego'];
 
 export default function LogoScroller() {
   return (
-    <section className="py-12 bg-black flex flex-col items-center">
+    <section className="py-20 bg-transparent flex flex-col items-center">
       <p className="text-white/40 text-xs font-bold uppercase tracking-widest mb-10">
         We are Trusted by Industry Leaders
       </p>
@@ -16,7 +16,7 @@ export default function LogoScroller() {
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-black to-transparent" />
 
         {/* Scrolling track */}
-        <div className="flex w-max animate-scroll-left hover:[animation-play-state:paused]">
+        <div className="flex w-max animate-scroll-left hover:[animation-play-state:paused] py-6">
           {/* Original set */}
           {brands.map((brand) => (
             <LogoItem key={`orig-${brand}`} brand={brand} />
@@ -33,7 +33,7 @@ export default function LogoScroller() {
 
 function LogoItem({ brand }: { brand: string }) {
   return (
-    <span className="flex-shrink-0 px-10 text-2xl font-display font-bold text-white grayscale opacity-60 hover:opacity-100 transition-opacity duration-300 select-none">
+    <span className="flex-shrink-0 px-10 text-4xl font-display font-bold text-white grayscale opacity-60 hover:opacity-100 transition-opacity duration-300 select-none">
       {brand}
     </span>
   );

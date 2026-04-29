@@ -15,66 +15,71 @@ export default function Home() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20 px-6">
-        {/* Background Animation/Image */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/40 via-brand-dark/80 to-brand-dark" />
-          <img 
-            src="https://picsum.photos/seed/ox-hero/1920/1080?brightness=20" 
-            alt="Hero Background" 
-            className="w-full h-full object-cover grayscale opacity-30"
-          />
-        </div>
+      
+<section className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden py-20">
+  {/* Background Animation/Image */}
+  <div className="absolute inset-0 z-0">
+    <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/40 via-brand-dark/80 to-brand-dark" />
+    <img
+      src="https://picsum.photos/seed/ox-hero/1920/1080?brightness=20"
+      alt="Hero Background"
+      className="w-full h-full object-cover grayscale opacity-30"
+    />
+  </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-xs font-medium mb-8"
-          >
-            <span className="w-2 h-2 rounded-full bg-brand-gold animate-pulse" />
-            Digital Marketing & Advertising Agency in Nigeria
-          </motion.div>
+  {/* Hero Text Content */}
+  <div className="relative z-10 max-w-4xl mx-auto text-center px-6 mb-16">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-xs font-medium mb-8"
+    >
+      <span className="w-2 h-2 rounded-full bg-brand-gold animate-pulse" />
+      Digital Marketing & Advertising Agency in Nigeria
+    </motion.div>
 
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-5xl md:text-6xl font-display font-medium tracking-tight mb-8 leading-[0.95]"
-          >
-            We Drive Measurable Results Through Marketing, Advertising and Tech Solutions
-          </motion.h1>
+    <motion.h1
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.1 }}
+      className="text-5xl md:text-6xl font-display font-medium tracking-tight mb-8 leading-[0.95]"
+    >
+      We Drive Measurable Results Through Marketing, Advertising and Tech Solutions
+    </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-brand-grey text-lg md:text-xl max-w-2xl mx-auto mb-10"
-          >
-            We help businesses move beyond the "activity-only" mindset, turning their marketing into coordinated growth systems that deliver measurable results.
-          </motion.p>
+    <motion.p
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2 }}
+      className="text-brand-grey text-lg md:text-xl max-w-2xl mx-auto mb-10"
+    >
+      We help businesses move beyond the "activity-only" mindset, turning their
+      marketing into coordinated growth systems that deliver measurable results.
+    </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="flex flex-wrap justify-center gap-4"
-          >
-            <Link to="/contact" className="btn-outline group hover:border-brand-gold">
-              <Phone className="w-4 h-4 group-hover:text-brand-gold transition-colors" />
-              <span className="group-hover:text-brand-gold transition-colors">Get In Touch</span>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.3 }}
+      className="flex flex-wrap justify-center gap-4"
+    >
+      <Link to="/contact" className="btn-outline group hover:border-brand-gold">
+        <Phone className="w-4 h-4 group-hover:text-brand-gold transition-colors" />
+        <span className="group-hover:text-brand-gold transition-colors">Get In Touch</span>
+      </Link>
+    </motion.div>
+  </div>
 
-      <ImageAutoScroller/>
+  {/* Scrollers at the bottom of hero */}
+  <div className="relative z-10 w-full">
+    <ImageAutoScroller />
+    <Logoscroller />
+  </div>
+</section>
 
-      {/* Trusted By Section */}
-      <Logoscroller/>
 
       {/* Data Driven Solutions Section */}
-      <section className="py-24 container-custom grid md:grid-cols-2 gap-16 items-center">
+      <section className="py-8 container-custom grid md:grid-cols-2 gap-16 items-center">
         <div className="relative aspect-square rounded-3xl overflow-hidden border border-white/10 group">
           <img 
             src="https://picsum.photos/seed/ox-team/800/800" 
