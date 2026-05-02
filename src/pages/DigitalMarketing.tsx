@@ -42,7 +42,7 @@ const DigitalMarketing = () => {
           Digital Marketing 
          </h1> 
         <p className="text-brand-grey text-lg max-w-2xl relative z-10">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, voluptatem suscipit libero dolorem molestiae rerum consectetur, quia sapiente est minima quos explicabo nostrum, officia quae magni doloribus consequatur quod nisi.
+          Your competitors are showing up where your customers are — the question is whether you are too. We build and run data-driven digital marketing systems that grow your visibility, attract the right audience, and turn attention into measurable revenue.
         </p>
       </section>
 
