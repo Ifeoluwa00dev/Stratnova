@@ -18,10 +18,10 @@ const navLinks = [
      path: "/services",
     submenu: [
       { name: "Digital Marketing",path: "/digital-marketing"},
-      {name: "Website Development", path: "/"},
-      {name: "Graphics & Branding ", path: "/"},
-      {name: "Artificial Intelligence (A.I)", path: "/"},
-      {name: "Project Management", path: "/"}
+      {name: "Website Development", path: "/web-development"},
+      {name: "Graphics & Branding ", path: "/graphics-branding"},
+      {name: "Artificial Intelligence (A.I)", path: "/artificial-intelligence"},
+      {name: "Project Management", path: "/project-management"}
     ]},
   { name: "Projects", path: "/projects" },
   { name: "Blog", path: "/blog" },

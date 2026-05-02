@@ -10,6 +10,10 @@ import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Whatsappwidget from "./components/sections/Whatsappwidget";
 import DigitalMarketing from "./pages/DigitalMarketing";
+import WebDevelopment from "./pages/WebDevelopment";
+import GraphicsBranding from "./pages/GraphicsBranding";
+import ArtificialIntelligence from "./pages/ArtificialIntelligence";
+import ProjectManagement from "./pages/ProjectManagement";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -43,6 +47,10 @@ export default function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
             <Route path= "/digital-marketing" element={ <DigitalMarketing/>}/>
+            <Route path= "/web-development" element={<WebDevelopment/>}/>
+            <Route path= "/graphics-branding" element={<GraphicsBranding/>}/>
+            <Route path= "/artificial-intelligence" element={<ArtificialIntelligence/>}/>
+            <Route path= "/project-management" element={<ProjectManagement/>}/>
           </Routes>
         </main>
         <Footer />
